@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Add Achievement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row c-box--medium">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">Home</li>
+            <li class="breadcrumb-item">My Achievements</li>
+            <li class="breadcrumb-item active" aria-current="page">Add Achievement</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="row">
+    <h2>@ViewBag.Title</h2>
+</div>
+
+<div class="row c-box--medium">
+    @Html.ActionLink("My Achievement is not defined", "Create", "Achievement", new { @class = "btn btn-primary" })
+</div>
+
+<div class="row c-box--medium">
+    <form>
+        <div class="form-group row">
+            <label for="subcategorySelect" class="col-sm-2 col-form-label">Subcategory</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="subcategorySelect">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="achievementSelect" class="col-sm-2 col-form-label">Achievement</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="achievementSelect">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="commentSelect" class="col-sm-2 col-form-label">Comment</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="commentSelect" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="lcontactSelect" class="col-sm-2 col-form-label">Last Contact</label>
+            <div class="col-sm-10">
+                <input class="form-control" id="lcontactSelect"/>
+            </div>
+        </div>
+    </form>
+    @Html.ActionLink("Add", "Index", "Achievement", new { @class = "btn btn-primary" })
+</div>

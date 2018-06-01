@@ -22,3 +22,27 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.c-box--small {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.c-box--medium {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.c-box--large {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.u-no-gutter {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.dataTables_filter {
+    visibility: hidden;
+}
