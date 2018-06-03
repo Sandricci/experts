@@ -8,7 +8,7 @@ global.search = {
         const json = $.getJSON('/Content/json/data' + global.search.context + '.json', function (json) {
             $('.js-search').select2({
                 data: json.results,
-                placeholder: 'Select an achievement',
+                placeholder: 'Filter by achievement',
                 allowClear: true
             });
 
@@ -23,7 +23,7 @@ global.search = {
         $(global.search.container).DataTable().destroy();
         $(global.search.container).DataTable({ "dom": '<"top"i>rt<"bottom"flp><"clear">' })
             .search(selected[0].text);
-        $(global.search.container).DataTable({ "dom": '<"top"i>rt<"bottom"flp><"clear">' })
+        $(global.search.container).DataTable()
             .draw();
     }
 }

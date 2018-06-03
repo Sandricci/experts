@@ -3,21 +3,21 @@
     "achievement": "C#",
     "type": "Programming Languages",
     "comment": "",
-    "lastContact": "2018-05-28",
+    "lastContact": "2018.05",
     "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
   },
   {
     "achievement": "F#",
     "type": "Programming Languages",
     "comment": "markdown parser",
-    "lastContact": "2017-01-21",
+    "lastContact": "2017.01",
     "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
   },
   {
     "achievement": "CouchDB",
     "type": "Database Experience",
     "comment": "offline synchronization",
-    "lastContact": "2009-01-02",
+    "lastContact": "2009.01",
     "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
   }
 ]
