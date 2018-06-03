@@ -11,73 +11,85 @@
     </nav>
 </div>
 
-<div class="row">
-    <h2>@ViewBag.Title</h2>
-</div>
-
 <div class="row c-box--medium">
-    <div class="row">
-        <div class="col-md-2 u-no-gutter">
-            <select class="js-search" style="width: 100%">
-                <option></option>
-            </select>
-        </div>
-        <div class="col-md-2 col-md-offset-1 u-no-gutter">
-            @Html.ActionLink("Add Achievement", "Add", "Achievement", new { @class = "btn btn-sm btn-primary" })
-        </div>
-    </div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#achievements">My Achievements</a></li>
+        <li><a data-toggle="tab" href="#role">Achievements towards Role</a></li>
+    </ul>
 </div>
-
-<div class="row c-box--medium">
-    <div class="col-md-6">
+<div class="tab-content">
+    <div id="achievements" class="tab-pane fade in active">
         <div class="row">
-            <div class="col-md-5 u-no-gutter">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">All Achievements</label>
+            <h2>My Achievements</h2>
+        </div>
+        <div class="row c-box--medium">
+            <div class="row">
+                <div class="col-md-2 u-no-gutter">
+                    <select class="js-search" style="width: 100%">
+                        <option></option>
+                    </select>
                 </div>
-            </div>
-            <div class="col-md-7 u-no-gutter">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Achievements towards my role</label>
+                <div class="col-md-2 col-md-offset-1 u-no-gutter">
+                    @Html.ActionLink("Add Achievement", "Add", "Achievement", new { @class = "btn btn-sm btn-primary" })
                 </div>
             </div>
         </div>
+        <table class="js-achievement-table table table-striped table-hover compact">
+            <thead>
+                <tr>
+                    <th>Achievement</th>
+                    <th>Type</th>
+                    <th>Comment</th>
+                    <th>Last Contact</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div id="role" class="tab-pane fade">
+        <h2 class="text-center">Achievements Towards Role</h2>
+        <h4>Soft Skills</h4>
+        <table class="js-achievement-role-table1 table table-striped table-hover compact" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Achievement</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+        <h4>Hard Skills</h4>
+        <table class="js-achievement-role-table2 table table-striped table-hover compact" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Achievement</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+        <h4>Experience</h4>
+        <table class="js-achievement-role-table3 table table-striped table-hover compact" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Achievement</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
     </div>
 </div>
-
-<table class="js-achievement-table table table-striped table-hover">
-    <thead>
-        <tr>
-            <th>Achievement</th>
-            <th>Type</th>
-            <th>Comment</th>
-            <th>Last Contact</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-</table>
 
 @section scripts {
     <script>
         $(document).ready(function () {
-            const json = $.getJSON('/Content/json/dataAchievements.json', function (json) {
-                console.log('table')
-                $('.js-achievement-table').DataTable({
-                    data: json,
-                    columns: [
-                        { data: 'achievement' },
-                        { data: 'type' },
-                        { data: 'comment' },
-                        { data: 'lastContact' },
-                        { data: 'actions' }
-                    ],
-                    "dom": '<"top"f>rt<"bottom"ilp><"clear">'
-                });
-            });
-
-            global.search.init('','.js-achievement-table');
+            global.achievements.renderATable();
+            global.achievements.renderAtrTables();
+            global.search.init('', '.js-achievement-table');
 
         });
 

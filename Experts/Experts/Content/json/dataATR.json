@@ -1,0 +1,26 @@
+﻿[
+  {
+    "status": 90,
+    "achievement": "C#",
+    "type": "Programming Languages",
+    "comment": "",
+    "lastContact": "2018.05",
+    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "status": 20,
+    "achievement": "F#",
+    "type": "Programming Languages",
+    "comment": "markdown parser",
+    "lastContact": "2017.01",
+    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "status":  60,
+    "achievement": "CouchDB",
+    "type": "Database Experience",
+    "comment": "offline synchronization",
+    "lastContact": "2009.01",
+    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  }
+]

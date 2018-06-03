@@ -77,5 +77,86 @@ global.achievements = {
             const month = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
             document.getElementById('lcontactSelect').value = date.getFullYear().toString().concat('.').concat(month);
         }
+    },
+    renderATable() {
+        const a = $.getJSON('/Content/json/dataAchievements.json', function (json) {
+            console.log('table')
+            $('.js-achievement-table').DataTable({
+                data: json,
+                columns: [
+                    { data: 'achievement' },
+                    { data: 'type' },
+                    { data: 'comment' },
+                    { data: 'lastContact' },
+                    { data: 'actions', className: 'text-center' }
+                ],
+                "dom": '<"top"f>rt<"bottom"ilp><"clear">'
+            });
+        });
+    },
+    renderAtrTables() {
+        const atrSoft = $.getJSON('/Content/json/dataATR.json', function (json) {
+            $('.js-achievement-role-table1').DataTable({
+                data: json,
+                columns: [
+                    { data: 'status' },
+                    { data: 'achievement' },
+                    { data: 'type' },
+                    { data: 'actions', className: 'text-center' }
+                ],
+                createdRow: function (row, data, index) {
+                    const status = data["status"];
+                    if (status < 33)
+                        $('td', row).eq(0).html('<div class="atr-status atr-status-danger">'+ status +' %</div>');
+                    else if (status > 32 && status < 80)
+                        $('td', row).eq(0).html('<div class="atr-status atr-status-warning">' + status +' %</div>');
+                    else if (status > 80)
+                        $('td', row).eq(0).html('<div class="atr-status atr-status-success">' + status +' %</div>');
+                },
+                dom: '<"top"f>rt<"bottom"ilp><"clear">'
+            });
+        });
+        const atrHard = $.getJSON('/Content/json/dataATR.json', function (json) {
+            $('.js-achievement-role-table2').DataTable({
+                data: json,
+                columns: [
+                    { data: 'status' },
+                    { data: 'achievement' },
+                    { data: 'type' },
+                    { data: 'actions', className: 'text-center' }
+                ],
+                createdRow: function (row, data, index) {
+                    const status = data["status"];
+                    if (status < 33)
+                        $('td', row).eq(0).html('<div class="atr-status atr-status-danger">' + status + ' %</div>');
+                    else if (status > 32 && status < 80)
+                        $('td', row).eq(0).html('<div class="atr-status atr-status-warning">' + status + ' %</div>');
+                    else if (status > 80)
+                        $('td', row).eq(0).html('<div class="atr-status atr-status-success">' + status + ' %</div>');
+                },
+                dom: '<"top"f>rt<"bottom"ilp><"clear">'
+            });
+        });
+        const atrExperience = $.getJSON('/Content/json/dataATR.json', function (json) {
+            $('.js-achievement-role-table3').DataTable({
+                data: json,
+                columns: [
+                    { data: 'status' },
+                    { data: 'achievement' },
+                    { data: 'type' },
+                    { data: 'actions', className: 'text-center' }
+                ],
+                createdRow: function (row, data, index) {
+                    const status = data["status"];
+                    if (status < 33)
+                        $('td', row).eq(0).html('<div class="atr-status atr-status-danger">' + status + ' %</div>');
+                    else if (status > 32 && status < 80)
+                        $('td', row).eq(0).html('<div class="atr-status atr-status-warning">' + status + ' %</div>');
+                    else if (status > 80)
+                        $('td', row).eq(0).html('<div class="atr-status atr-status-success">' + status + ' %</div>');
+                },
+                dom: '<"top"f>rt<"bottom"ilp><"clear">'
+            });
+        });
     }
 }

@@ -51,3 +51,32 @@ textarea {
     margin-top: 10px;
     margin-left: 20px;
 }
+
+.full-width {
+    width: 100%;
+}
+
+.atr-status-danger {
+    background-color: #b71c1c !important;
+}
+
+.atr-status-warning {
+    background-color: #fb8c00 !important;
+}
+
+.atr-status-success {
+    background-color: #1b5e20 !important;
+}
+
+.atr-status-info {
+    background-color: #40c4ff !important;
+}
+
+.atr-status {
+    width: auto;
+    height: 30px;
+    padding: 2px;
+    border-radius: 2px;
+    text-align: center;
+    color: white;
+}
