@@ -46,3 +46,8 @@ textarea {
 .dataTables_filter {
     visibility: hidden;
 }
+
+.dataTables_length {
+    margin-top: 10px;
+    margin-left: 20px;
+}

@@ -16,8 +16,15 @@
 </div>
 
 <div class="row c-box--medium">
-    <div class="col-md-8 u-no-gutter">
-        <select class="js-search" name="state"></select>
+    <div class="row">
+        <div class="col-md-2 u-no-gutter">
+            <select class="js-search" style="width: 100%">
+                <option></option>
+            </select>
+        </div>
+        <div class="col-md-2 col-md-offset-1 u-no-gutter">
+            @Html.ActionLink("Add Achievement", "Add", "Achievement", new { @class = "btn btn-sm btn-primary" })
+        </div>
     </div>
 </div>
 
@@ -40,11 +47,7 @@
     </div>
 </div>
 
-<div class="row c-box--medium">
-    @Html.ActionLink("Add Achievement", "Add", "Achievement", new { @class = "btn btn-primary" })
-</div>
-
-<table class="js-achievement-table">
+<table class="js-achievement-table table table-striped table-hover">
     <thead>
         <tr>
             <th>Achievement</th>
@@ -69,7 +72,8 @@
                         { data: 'comment' },
                         { data: 'lastContact' },
                         { data: 'actions' }
-                    ]
+                    ],
+                    "dom": '<"top"f>rt<"bottom"ilp><"clear">'
                 });
             });
 
@@ -79,6 +83,3 @@
 
     </script>
 }
-
-
-
