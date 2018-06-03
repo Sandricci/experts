@@ -43,7 +43,8 @@ global.home = {
                         label: 'Achievements',
                         data: [(100-achieved), achieved],
                         backgroundColor: ['#ffff00', '#558b2f']
-                    }]
+                    }],
+                    labels: ['in progress', 'achieved'] 
                 },
                 options: {
                     responsive: true,
