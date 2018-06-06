@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Achievables";
+}
+
+<div class="row c-box--medium">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">Home</li>
+            <li class="breadcrumb-item active" aria-current="page">Achievables</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="row c-box--medium">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#achievables">Achievables</a></li>
+        <li><a data-toggle="tab" href="#types">Types</a></li>
+    </ul>
+</div>
+<div class="tab-content">
+    <div id="achievements" class="tab-pane fade in active">
+        <div class="row">
+            <h2>Achievables</h2>
+        </div>
+        <div class="row c-box--medium">
+            <div class="row">
+                <div class="col-md-2 u-no-gutter">
+                    <select class="js-search" style="width: 100%">
+                        <option></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <table class="js-achievement-table table table-striped table-hover compact">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Achievement</th>
+                    <th>Type</th>
+                    <th>Comment</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div id="role" class="tab-pane fade">
+        <h2 class="text-center">Types</h2>
+        <table class="js-achievement-role-table1 table table-striped table-hover compact" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Achievement</th>
+                    <th>Type</th>
+                    <th>Comment</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            global.achievements.renderATable();
+            global.achievements.renderAtrTables();
+            global.search.init('', '.js-achievement-table');
+
+        });
+
+    </script>
+}

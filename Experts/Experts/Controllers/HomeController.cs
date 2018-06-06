@@ -33,13 +33,6 @@ namespace Experts.Controllers
 
             return View();
         }
-
-        public ActionResult Properties()
-        {
-            ViewBag.Message = "Properties";
-
-            return View();
-        }
-
+        
     }
 }

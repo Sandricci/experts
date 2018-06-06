@@ -54,7 +54,8 @@ global.home = {
                         display: true,
                         text: title
                     }
-                }
+                },
+                dom: '<"top"f>rt<"bottom"ilp><"clear">'
             })
         }
     }
