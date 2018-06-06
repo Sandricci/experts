@@ -39,8 +39,12 @@
         <div class="col-md-2 u-no-gutter"><strong>Remark?</strong></div>
         <div class="col-md-2">Remark</div>
     </div>
-    <div class="row c-box--medium">
-        @Html.ActionLink("Edit Achievable", "Edit", "Achievables", null, new { @class = "btn btn-sm btn-primary" })
+
+    <div class="col-md-5 c-box--medium">
+        <div class="btn-group pull-right">
+            @Html.ActionLink("Back", "Index", "Achievables", null, new { @class = "btn btn-sm btn-secondary" })
+            @Html.ActionLink("Edit Achievable", "Edit", "Achievables", null, new { @class = "btn btn-sm btn-primary" })
+        </div>
     </div>
 </div>
 

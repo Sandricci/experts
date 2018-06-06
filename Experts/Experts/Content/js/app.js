@@ -103,6 +103,8 @@ global.achievements = {
                     { data: 'status' },
                     { data: 'achievement' },
                     { data: 'type' },
+                    { data: 'amountExpected' },
+                    { data: 'amountOwned' },
                     { data: 'actions', className: 'text-center' }
                 ],
                 createdRow: function (row, data, index) {
@@ -124,6 +126,8 @@ global.achievements = {
                     { data: 'status' },
                     { data: 'achievement' },
                     { data: 'type' },
+                    { data: 'amountExpected' },
+                    { data: 'amountOwned' },
                     { data: 'actions', className: 'text-center' }
                 ],
                 createdRow: function (row, data, index) {
@@ -145,6 +149,8 @@ global.achievements = {
                     { data: 'status' },
                     { data: 'achievement' },
                     { data: 'type' },
+                    { data: 'amountExpected' },
+                    { data: 'amountOwned' },
                     { data: 'actions', className: 'text-center' }
                 ],
                 createdRow: function (row, data, index) {
@@ -188,6 +194,19 @@ global.achievables = {
                     { data: 'category' },
                     { data: 'type' },
                     { data: 'achievement' },
+                    { data: 'comment' },
+                    { data: 'actions', className: 'text-center' }
+                ],
+                "dom": '<"top"f>rt<"bottom"ilp><"clear">'
+            });
+        });
+
+        const types = $.getJSON('/Content/json/dataAchievables.json', function (json) {
+            $('.js-types-table').DataTable({
+                data: json,
+                columns: [
+                    { data: 'category' },
+                    { data: 'type' },
                     { data: 'comment' },
                     { data: 'actions', className: 'text-center' }
                 ],

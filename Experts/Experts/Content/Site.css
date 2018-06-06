@@ -84,3 +84,7 @@ textarea {
     text-align: center;
     color: black;
 }
+
+.clear {
+    clear: both;
+}

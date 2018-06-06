@@ -25,7 +25,7 @@
 <div class="c-box--medium">
     <form>
         <div class="form-group row">
-            <label for="achievementSelect" class="col-md-2 col-form-label">Achievement</label>
+            <label for="achievementSelect" class="col-md-2 col-form-label u-no-gutter">Achievement</label>
             <div class="col-md-3">
                 <select class="add-achievement-select" style="width: 100%" name="state">
                     <option></option>
@@ -33,13 +33,13 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="commentSelect" class="col-md-2 col-form-label">Comment</label>
+            <label for="commentSelect" class="col-md-2 col-form-label u-no-gutter">Comment</label>
             <div class="col-md-3">
                 <textarea class="form-control" id="commentSelect" rows="3" placeholder="enter some remarks here"></textarea>
             </div>
         </div>
         <div class="form-group row">
-            <label for="lcontactSelect" class="col-md-2 col-form-label">Last Contact</label>
+            <label for="lcontactSelect" class="col-md-2 col-form-label u-no-gutter">Last Contact</label>
             <div class="col-md-3">
                 <div class="input-group">
                     <input class="form-control" id="lcontactSelect" placeholder="2018.1" />
@@ -50,8 +50,11 @@
             </div>
         </div>
     </form>
-    <div class="col-md-5">
-        @Html.ActionLink("Add Achievement", "Index", "Achievement", new { @class = "btn btn-sm btn-primary pull-right" })
+    <div class="col-md-5 c-box--medium">
+        <div class="btn-group pull-right">
+            <button class="btn btn-secondary">Back</button>
+            @Html.ActionLink("Add Achievement", "Index", "Achievement", new { @class = "btn btn-primary" })
+        </div>
     </div>
 </div>
 @section scripts {

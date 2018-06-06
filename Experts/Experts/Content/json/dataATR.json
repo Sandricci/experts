@@ -5,7 +5,9 @@
     "type": "Programming Languages",
     "comment": "",
     "lastContact": "2018.05",
-    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+    "amountExpected": "5",
+    "amountOwned": "0",
+    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\"> + </button><button class=\"btn btn-sm btn-secondary\"> - </button></div>"
   },
   {
     "status": 20,
@@ -13,14 +15,18 @@
     "type": "Programming Languages",
     "comment": "markdown parser",
     "lastContact": "2017.01",
-    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+    "amountExpected": "5",
+    "amountOwned": "0",
+    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\"> + </button><button class=\"btn btn-sm btn-secondary\"> - </button></div>"
   },
   {
-    "status":  60,
+    "status": 60,
     "achievement": "CouchDB",
     "type": "Database Experience",
     "comment": "offline synchronization",
+    "amountExpected": "5",
+    "amountOwned": "0",
     "lastContact": "2009.01",
-    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\"> + </button><button class=\"btn btn-sm btn-secondary\"> - </button></div>"
   }
 ]
