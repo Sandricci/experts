@@ -18,54 +18,54 @@
     </ul>
 </div>
 <div class="tab-content">
-    <div id="achievements" class="tab-pane fade in active">
+    <div id="achievables" class="tab-pane fade in active">
         <div class="row">
             <h2>Achievables</h2>
         </div>
         <div class="row c-box--medium">
-            <div class="row">
-                <div class="col-md-2 u-no-gutter">
-                    <select class="js-search" style="width: 100%">
-                        <option></option>
-                    </select>
-                </div>
+            <div class="col-md-2 u-no-gutter">
+                <select class="js-search" style="width: 100%">
+                    <option></option>
+                </select>
             </div>
         </div>
-        <table class="js-achievement-table table table-striped table-hover compact">
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Achievement</th>
-                    <th>Type</th>
-                    <th>Comment</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-        </table>
+        <div class="row">
+            <table class="js-achievables-table table table-striped table-hover compact">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Achievement</th>
+                        <th>Type</th>
+                        <th>Comment</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
     </div>
-    <div id="role" class="tab-pane fade">
-        <h2 class="text-center">Types</h2>
-        <table class="js-achievement-role-table1 table table-striped table-hover compact" style="width: 100%">
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Achievement</th>
-                    <th>Type</th>
-                    <th>Comment</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-        </table>
+    <div id="types" class="tab-pane fade">
+        <h2>Types</h2>
+        <div class="row">
+            <table class="js-types-table table table-striped table-hover compact" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Achievement</th>
+                        <th>Type</th>
+                        <th>Comment</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
     </div>
 </div>
 
 @section scripts {
     <script>
         $(document).ready(function () {
-            global.achievements.renderATable();
-            global.achievements.renderAtrTables();
-            global.search.init('', '.js-achievement-table');
-
+            global.achievables.renderATable();
+            //global.search.init('', '.js-achievables-table');
         });
 
     </script>

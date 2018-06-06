@@ -23,64 +23,88 @@
             <h2>My Achievements</h2>
         </div>
         <div class="row c-box--medium">
-            <div class="row">
-                <div class="col-md-2 u-no-gutter">
-                    <select class="js-search" style="width: 100%">
-                        <option></option>
-                    </select>
-                </div>
-                <div class="col-md-2 col-md-offset-1 u-no-gutter">
-                    @Html.ActionLink("Add Achievement", "Add", "Achievement", new { @class = "btn btn-sm btn-primary" })
-                </div>
+            <div class="col-md-4 u-no-gutter">
+                <select class="js-search" style="width: 100%">
+                    <option></option>
+                </select>
+            </div>
+            <div class="col-md-2 col-md-offset-1 u-no-gutter">
+                @Html.ActionLink("Add Achievement", "Add", "Achievement", new { @class = "btn btn-sm btn-primary" })
             </div>
         </div>
-        <table class="js-achievement-table table table-striped table-hover compact">
-            <thead>
-                <tr>
-                    <th>Achievement</th>
-                    <th>Type</th>
-                    <th>Comment</th>
-                    <th>Last Contact</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-        </table>
+        <div class="row">
+            <table class="js-achievement-table table table-striped table-hover compact">
+                <thead>
+                    <tr>
+                        <th>Achievement</th>
+                        <th>Type</th>
+                        <th>Comment</th>
+                        <th>Last Contact</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
     </div>
-    <div id="role" class="tab-pane fade">
-        <h2 class="text-center">Achievements Towards Role</h2>
-        <h4>Soft Skills</h4>
-        <table class="js-achievement-role-table1 table table-striped table-hover compact" style="width: 100%">
-            <thead>
-                <tr>
-                    <th>Status</th>
-                    <th>Achievement</th>
-                    <th>Type</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-        </table>
-        <h4>Hard Skills</h4>
-        <table class="js-achievement-role-table2 table table-striped table-hover compact" style="width: 100%">
-            <thead>
-                <tr>
-                    <th>Status</th>
-                    <th>Achievement</th>
-                    <th>Type</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-        </table>
-        <h4>Experience</h4>
-        <table class="js-achievement-role-table3 table table-striped table-hover compact" style="width: 100%">
-            <thead>
-                <tr>
-                    <th>Status</th>
-                    <th>Achievement</th>
-                    <th>Type</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-        </table>
+    <div id="role" class="tab-pane fade c-achievements-role">
+        <div class="row">
+            <h2>Achievements Towards Role</h2>
+        </div>
+        <div class="form-group row c-box--medium">
+            <label class="form-label">Select a role:</label>
+            <select class="form-control">
+                <option>Dev (next role)</option>
+                <option>Senior Dev</option>
+                <option>Designer</option>
+                <option>Project manager</option>
+                <option>Tester</option>
+            </select>
+        </div>
+        <div class="row">
+            <h4>Soft Skills</h4>
+        </div>
+        <div class="row">
+            <table class="js-achievement-role-table1 table table-striped table-hover compact" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Achievement</th>
+                        <th>Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="row">
+            <h4>Hard Skills</h4>
+        </div>
+        <div class="row">
+            <table class="js-achievement-role-table2 table table-striped table-hover compact" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Achievement</th>
+                        <th>Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="row">
+            <h4>Experience</h4>
+        </div>
+        <div class="row">
+            <table class="js-achievement-role-table3 table table-striped table-hover compact" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Achievement</th>
+                        <th>Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
     </div>
 </div>
 

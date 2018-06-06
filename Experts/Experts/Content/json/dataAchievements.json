@@ -1,5 +1,6 @@
 ﻿[
   {
+    "category": "Hard Skills",
     "achievement": "C#",
     "type": "Programming Languages",
     "comment": "",
@@ -7,6 +8,7 @@
     "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
   },
   {
+    "category": "Hard Skills",
     "achievement": "F#",
     "type": "Programming Languages",
     "comment": "markdown parser",
@@ -14,6 +16,7 @@
     "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
   },
   {
+    "category": "Hard Skills",
     "achievement": "CouchDB",
     "type": "Database Experience",
     "comment": "offline synchronization",

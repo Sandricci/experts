@@ -145,6 +145,7 @@
     <Compile Include="Controllers\AchievablesController.cs" />
     <Compile Include="Controllers\AchievementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TypesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -168,6 +169,7 @@
     <Content Include="Content\json\dataDB.json" />
     <Content Include="Content\json\dataAchievements.json" />
     <Content Include="Content\json\dataATR.json" />
+    <Content Include="Content\json\dataAchievables.json" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -196,12 +198,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\CoreData.cshtml" />
     <Content Include="Views\Achievement\Add.cshtml" />
-    <Content Include="Views\Achievement\Edit.cshtml" />
-    <Content Include="Views\Achievement\Details.cshtml" />
     <Content Include="Views\Achievables\Index.cshtml" />
     <Content Include="Views\Achievables\Create.cshtml" />
     <Content Include="Views\Achievables\Details.cshtml" />
     <Content Include="Views\Achievables\Edit.cshtml" />
+    <Content Include="Views\Types\Create.cshtml" />
+    <Content Include="Views\Types\Edit.cshtml" />
+    <Content Include="Views\Types\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -44,7 +44,7 @@ global.home = {
                     datasets: [{
                         label: 'Achievements',
                         data: [(100-achieved), achieved],
-                        backgroundColor: ['#ffff00', '#558b2f']
+                        backgroundColor: ['#fcf7a7', '#95eb92']
                     }],
                     labels: ['in progress', 'achieved'] 
                 },
@@ -160,4 +160,39 @@ global.achievements = {
             });
         });
     }
+}
+global.achievables = {
+    add: {
+        init() {
+            $.getJSON('/Content/json/data.json', function (db) {
+                $('.add-achievement-select').select2({
+                    data: db.results,
+                    placeholder: 'Select an achievement',
+                    allowClear: true
+                });
+            })
+        },
+        save() { },
+        reset() { },
+        setLastContact() {
+            const date = new Date();
+            const month = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
+            document.getElementById('lcontactSelect').value = date.getFullYear().toString().concat('.').concat(month);
+        }
+    },
+    renderATable() {
+        const a = $.getJSON('/Content/json/dataAchievables.json', function (json) {
+            $('.js-achievables-table').DataTable({
+                data: json,
+                columns: [
+                    { data: 'category' },
+                    { data: 'type' },
+                    { data: 'achievement' },
+                    { data: 'comment' },
+                    { data: 'actions', className: 'text-center' }
+                ],
+                "dom": '<"top"f>rt<"bottom"ilp><"clear">'
+            });
+        });
+    },
 }

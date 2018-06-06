@@ -1,0 +1,26 @@
+﻿[
+  {
+    "category": "Hard Skills",
+    "achievement": "C#",
+    "type": "Programming Languages",
+    "comment": "",
+    "lastContact": "2018.05",
+    "actions": "<div class=\"btn-group\"><a href=\"Achievables/Details\" class=\"btn btn-sm btn-primary\">Details</a><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "category": "Hard Skills",
+    "achievement": "F#",
+    "type": "Programming Languages",
+    "comment": "markdown parser",
+    "lastContact": "2017.01",
+    "actions": "<div class=\"btn-group\"><a href=\"Achievables/Details\" class=\"btn btn-sm btn-primary\">Details</a><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "category": "Hard Skills",
+    "achievement": "CouchDB",
+    "type": "Database Experience",
+    "comment": "offline synchronization",
+    "lastContact": "2009.01",
+    "actions": "<div class=\"btn-group\"><a href=\"Achievables/Details\" class=\"btn btn-sm btn-primary\">Details</a><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  }
+]

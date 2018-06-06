@@ -6,27 +6,27 @@ using System.Web.Mvc;
 
 namespace Experts.Controllers
 {
-    public class AchievablesController : Controller
+    public class TypesController : Controller
     {
-        // GET: Achievables
+        // GET: Types
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Achievables/Details
+        // GET: Types/Details
         public ActionResult Details()
         {
             return View();
         }
 
-        // GET: Achievables/Create
+        // GET: Types/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Achievables/Create
+        // POST: Types/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -42,13 +42,13 @@ namespace Experts.Controllers
             }
         }
 
-        // GET: Achievables/Edit
+        // GET: Types/Edit
         public ActionResult Edit()
         {
             return View();
         }
 
-        // POST: Achievables/Edit/5
+        // POST: Types/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -64,13 +64,13 @@ namespace Experts.Controllers
             }
         }
 
-        // GET: Achievables/Delete/5
+        // GET: Types/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Achievables/Delete/5
+        // POST: Types/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
