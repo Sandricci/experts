@@ -233,10 +233,10 @@ global.achievables = {
                     allowClear: true
                 });
             });
-        } 
+        }
     }
 },
-    global.types = {
+global.types = {
     search: {
         container: null,
         init(filter, container) {
@@ -275,5 +275,39 @@ global.achievables = {
                 "dom": '<"top"f>rt<"bottom"ilp><"clear">'
             });
         });
+    }
+},
+global.roles = {
+    developer: {
+        renderTable(table) {
+            const dev = $.getJSON('/Content/json/dataRoles.json', function (json) {
+                $(table).DataTable({
+                    data: json.developer,
+                    columns: [
+                        { data: 'name', width: '50%'},
+                        { data: 'achievables.length', className: 'text-center'},
+                        { data: 'actions', className: 'text-center', orderable: false }
+                    ],
+                    paging: false,
+                    bInfo: false
+                });
+            });
+        }
+    },
+    other: {
+        renderTable(table) {
+            const dev = $.getJSON('/Content/json/dataRoles.json', function (json) {
+                $(table).DataTable({
+                    data: json.other,
+                    columns: [
+                        { data: 'name', width: '50%' },
+                        { data: 'achievables.length', className: 'text-center'},
+                        { data: 'actions', className: 'text-center', orderable: false }
+                    ],
+                    paging: false,
+                    bInfo: false
+                });
+            });
+        }
     }
 }

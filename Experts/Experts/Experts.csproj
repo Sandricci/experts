@@ -171,6 +171,7 @@
     <Content Include="Content\json\dataAchievables.json" />
     <Content Include="Content\json\dataFilterAchievables.json" />
     <Content Include="Content\json\dataFilterTypes.json" />
+    <Content Include="Content\json\dataRoles.json" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
