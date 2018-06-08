@@ -171,11 +171,16 @@ global.achievables = {
     add: {
         init() {
             $.getJSON('/Content/json/data.json', function (db) {
-                $('.add-achievement-select').select2({
-                    data: db.results,
-                    placeholder: 'Select an achievement',
-                    allowClear: true
-                });
+                $('.add-achievement-select')
+                    .select2({
+                        data: db.results,
+                        placeholder: 'Select an achievement',
+                        allowClear: true
+                    })
+                    .on('change', function (e) {
+                        console.log(e);
+                        $('#js-achievable-description').fadeIn(200);
+                    })
             })
         },
         setLastContact() {
@@ -289,7 +294,7 @@ global.roles = {
                         { data: 'actions', className: 'text-center', orderable: false }
                     ],
                     paging: false,
-                    bInfo: false
+                    info: false
                 });
             });
         }
@@ -305,7 +310,7 @@ global.roles = {
                         { data: 'actions', className: 'text-center', orderable: false }
                     ],
                     paging: false,
-                    bInfo: false
+                    info: false
                 });
             });
         }

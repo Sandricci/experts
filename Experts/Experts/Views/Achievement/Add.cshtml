@@ -19,40 +19,66 @@
 </div>
 
 <div class="c-box--medium">
-    <form>
-        <div class="form-group row">
-            <label for="achievementSelect" class="col-md-2 col-form-label u-no-gutter">Achievable</label>
-            <div class="col-md-3">
-                <select class="add-achievement-select input-sm" style="width: 100%" name="state">
-                    <option></option>
-                </select>
-            </div>
-            <div class="col-md-3">
-                @Html.ActionLink("My Achievement is not defined", "Create", "Achievables", null, new { @class = "btn btn-sm btn-primary" })
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="commentSelect" class="col-md-2 col-form-label u-no-gutter">Comment</label>
-            <div class="col-md-3">
-                <textarea class="form-control input-sm" id="commentSelect" rows="3" placeholder="enter some remarks here"></textarea>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="lcontactSelect" class="col-md-2 col-form-label u-no-gutter">Last Contact</label>
-            <div class="col-md-3">
-                <div class="input-group">
-                    <input class="form-control input-sm" id="lcontactSelect" placeholder="2018.1" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" onclick="global.achievements.add.setLastContact()">Today</button>
-                    </span>
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <div class="form-group row">
+                    <label for="achievementSelect" class="col-md-2 col-form-label u-no-gutter">Achievable</label>
+                    <div class="col-md-6">
+                        <select class="add-achievement-select input-sm" style="width: 100%" name="state">
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        @Html.ActionLink("My Achievement is not defined", "Create", "Achievables", null, new { @class = "btn btn-sm btn-primary" })
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="commentSelect" class="col-md-2 col-form-label u-no-gutter">Comment</label>
+                    <div class="col-md-6">
+                        <textarea class="form-control input-sm" id="commentSelect" rows="3" placeholder="enter some remarks here"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="lcontactSelect" class="col-md-2 col-form-label u-no-gutter">Last Contact</label>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input class="form-control input-sm" id="lcontactSelect" placeholder="2018.1" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default btn-sm" type="button" onclick="global.achievements.add.setLastContact()">Today</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="col-md-6 c-box--medium">
+                <div class="btn-group pull-right">
+                    @Html.ActionLink("Back", "Index", "Achievement", null, new { @class = "btn btn-sm btn-default" })
+                    @Html.ActionLink("Add Achievement", "Index", "Achievement", new { @class = "btn btn-sm btn-primary" })
                 </div>
             </div>
         </div>
-    </form>
-    <div class="col-md-5 c-box--medium">
-        <div class="btn-group pull-right">
-            @Html.ActionLink("Back", "Index", "Achievement", null, new { @class = "btn btn-sm btn-default" })
-            @Html.ActionLink("Add Achievement", "Index", "Achievement", new { @class = "btn btn-sm btn-primary" })
+        <div class="col-md-4">
+            <div id="js-achievable-description">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Achievement Name here</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                                sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+                                magna aliquyam erat, sed diam voluptua. 
+                                At vero eos et accusam et justo duo dolores et ea rebum. 
+                                Stet clita kasd gubergren,
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+             </div>
         </div>
     </div>
 </div>
