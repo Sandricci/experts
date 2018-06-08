@@ -7,8 +7,8 @@
 <div class="row c-box--medium">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">Home</li>
-            <li class="breadcrumb-item">Achievables</li>
+            <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="breadcrumb-item">@Html.ActionLink("Achievables", "Index", "Achievables")</li>
             <li class="breadcrumb-item active" aria-current="page">Edit</li>
         </ol>
     </nav>
@@ -16,4 +16,11 @@
 
 <div class="row">
     <h2>@ViewBag.Title</h2>
+</div>
+
+<div class="col-md-5 c-box--medium">
+    <div class="btn-group pull-right">
+        @Html.ActionLink("Back", "Index", "Achievables", null, new { @class = "btn btn-sm btn-default" })
+        @Html.ActionLink("Save", "Index", "Achievables", null, new { @class = "btn btn-sm btn-primary" })
+    </div>
 </div>

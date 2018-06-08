@@ -7,8 +7,8 @@
 <div class="row c-box--medium">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">Home</li>
-            <li class="breadcrumb-item">My Achievements</li>
+            <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="breadcrumb-item">@Html.ActionLink("My Achievements", "Index", "Achievement")</li>
             <li class="breadcrumb-item active" aria-current="page">Add Achievement</li>
         </ol>
     </nav>
@@ -18,31 +18,30 @@
     <h2>@ViewBag.Title</h2>
 </div>
 
-<div class="row c-box--medium">
-    @Html.ActionLink("My Achievable is not defined", "Create", "Achievables", null, new { @class = "btn btn-sm btn-primary" })
-</div>
-
 <div class="c-box--medium">
     <form>
         <div class="form-group row">
-            <label for="achievementSelect" class="col-md-2 col-form-label u-no-gutter">Achievement</label>
+            <label for="achievementSelect" class="col-md-2 col-form-label u-no-gutter">Achievable</label>
             <div class="col-md-3">
-                <select class="add-achievement-select" style="width: 100%" name="state">
+                <select class="add-achievement-select input-sm" style="width: 100%" name="state">
                     <option></option>
                 </select>
+            </div>
+            <div class="col-md-3">
+                @Html.ActionLink("My Achievement is not defined", "Create", "Achievables", null, new { @class = "btn btn-sm btn-primary" })
             </div>
         </div>
         <div class="form-group row">
             <label for="commentSelect" class="col-md-2 col-form-label u-no-gutter">Comment</label>
             <div class="col-md-3">
-                <textarea class="form-control" id="commentSelect" rows="3" placeholder="enter some remarks here"></textarea>
+                <textarea class="form-control input-sm" id="commentSelect" rows="3" placeholder="enter some remarks here"></textarea>
             </div>
         </div>
         <div class="form-group row">
             <label for="lcontactSelect" class="col-md-2 col-form-label u-no-gutter">Last Contact</label>
             <div class="col-md-3">
                 <div class="input-group">
-                    <input class="form-control" id="lcontactSelect" placeholder="2018.1" />
+                    <input class="form-control input-sm" id="lcontactSelect" placeholder="2018.1" />
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button" onclick="global.achievements.add.setLastContact()">Today</button>
                     </span>
@@ -52,8 +51,8 @@
     </form>
     <div class="col-md-5 c-box--medium">
         <div class="btn-group pull-right">
-            <button class="btn btn-secondary">Back</button>
-            @Html.ActionLink("Add Achievement", "Index", "Achievement", new { @class = "btn btn-primary" })
+            @Html.ActionLink("Back", "Index", "Achievement", null, new { @class = "btn btn-sm btn-default" })
+            @Html.ActionLink("Add Achievement", "Index", "Achievement", new { @class = "btn btn-sm btn-primary" })
         </div>
     </div>
 </div>

@@ -178,35 +178,45 @@ global.achievables = {
                 });
             })
         },
-        save() { },
-        reset() { },
         setLastContact() {
             const date = new Date();
             const month = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
             document.getElementById('lcontactSelect').value = date.getFullYear().toString().concat('.').concat(month);
         }
     },
-    renderATable() {
+    search: {
+        container: null,
+        init(filter, container) {
+            this.container = container;
+            $.getJSON('/Content/json/dataFilterAchievables.json', function (db) {
+                $(filter).select2({
+                    data: db.results,
+                    placeholder: 'Filter achievables',
+                    allowClear: true
+                });
+            });
+
+            $(filter).change(function () {
+                global.achievables.search.updateTable(filter);
+            });
+        },
+        updateTable(filter) {
+            const selected = $(filter).select2('data');
+            $(global.achievables.search.container).DataTable().destroy();
+            $(global.achievables.search.container).DataTable({ "dom": '<"top"i>rt<"bottom"flp><"clear">' })
+                .search(selected[0].text);
+            $(global.achievables.search.container).DataTable()
+                .draw();
+        },
+    },
+    renderTable() {
         const a = $.getJSON('/Content/json/dataAchievables.json', function (json) {
             $('.js-achievables-table').DataTable({
                 data: json,
                 columns: [
-                    { data: 'category' },
-                    { data: 'type' },
                     { data: 'achievement' },
-                    { data: 'comment' },
-                    { data: 'actions', className: 'text-center', orderable: false }
-                ],
-                "dom": '<"top"f>rt<"bottom"ilp><"clear">'
-            });
-        });
-
-        const types = $.getJSON('/Content/json/dataAchievables.json', function (json) {
-            $('.js-types-table').DataTable({
-                data: json,
-                columns: [
-                    { data: 'category' },
                     { data: 'type' },
+                    { data: 'category' },
                     { data: 'comment' },
                     { data: 'actions', className: 'text-center', orderable: false }
                 ],
@@ -214,4 +224,56 @@ global.achievables = {
             });
         });
     },
+    create: {
+        init(select) {
+            $.getJSON('/Content/json/dataFilterTypes.json', function (db) {
+                $(select).select2({
+                    data: db.results,
+                    placeholder: 'Filter types',
+                    allowClear: true
+                });
+            });
+        } 
+    }
+},
+    global.types = {
+    search: {
+        container: null,
+        init(filter, container) {
+            this.container = container;
+            $.getJSON('/Content/json/dataFilterTypes.json', function (db) {
+                $(filter).select2({
+                    data: db.results,
+                    placeholder: 'Filter types',
+                    allowClear: true
+                });
+            });
+
+            $(filter).change(function () {
+                global.achievables.types.search.updateTable(filter);
+            });
+        },
+        updateTable(filter) {
+            const selected = $(filter).select2('data');
+            $(global.achievables.types.search.container).DataTable().destroy();
+            $(global.achievables.types.search.container).DataTable({ "dom": '<"top"i>rt<"bottom"flp><"clear">' })
+                .search(selected[0].text);
+            $(global.achievables.types.search.container).DataTable()
+                .draw();
+        }
+    },
+    renderTable() {
+        const types = $.getJSON('/Content/json/dataAchievables.json', function (json) {
+            $('.js-achievables-types-table').DataTable({
+                data: json,
+                columns: [
+                    { data: 'category' },
+                    { data: 'type' },
+                    { data: 'comment' },
+                    { data: 'actions', className: 'text-center', orderable: false }
+                ],
+                "dom": '<"top"f>rt<"bottom"ilp><"clear">'
+            });
+        });
+    }
 }

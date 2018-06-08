@@ -5,7 +5,7 @@
 <div class="row c-box--medium">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">Home</li>
+            <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home")</li>
             <li class="breadcrumb-item active" aria-current="page">Achievables</li>
         </ol>
     </nav>
@@ -23,20 +23,23 @@
             <h2>Achievables</h2>
         </div>
         <div class="row c-box--medium">
-            <div class="col-md-2 u-no-gutter">
-                <select class="js-search" style="width: 100%">
+            <div class="col-md-4 u-no-gutter">
+                <select class="js-achievables-filter" style="width: 100%">
                     <option></option>
                 </select>
+            </div>
+            <div class="col-md-2 col-md-offset-1 u-no-gutter">
+                @Html.ActionLink("Create Achievable", "Create", "Achievables", new { @class = "btn btn-sm btn-primary" })
             </div>
         </div>
         <div class="row">
             <table class="js-achievables-table table table-striped table-hover table-responsive compact">
                 <thead>
                     <tr>
-                        <th>Category</th>
-                        <th>Achievement</th>
+                        <th>Achievable</th>
                         <th>Type</th>
-                        <th>Comment</th>
+                        <th>Category</th>
+                        <th>Description</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -47,13 +50,23 @@
         <div class="row">
             <h2>Types</h2>
         </div>
+        <div class="row c-box--medium">
+            <div class="col-md-4 u-no-gutter">
+                <select class="js-achievables-types-filter" style="width: 100%">
+                    <option></option>
+                </select>
+            </div>
+            <div class="col-md-2 col-md-offset-1 u-no-gutter">
+                @Html.ActionLink("Create Type", "Create", "Types", new { @class = "btn btn-sm btn-primary" })
+            </div>
+        </div>
         <div class="row">
-            <table class="js-types-table table table-striped table-hover table-responsive compact" style="width: 100%">
+            <table class="js-achievables-types-table table table-striped table-hover table-responsive compact" style="width: 100%">
                 <thead>
                     <tr>
                         <th>Category</th>
                         <th>Type</th>
-                        <th>Comment</th>
+                        <th>Description</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -65,8 +78,10 @@
 @section scripts {
     <script>
         $(document).ready(function () {
-            global.achievables.renderATable();
-            //global.search.init('', '.js-achievables-table');
+            global.achievables.renderTable();
+            global.achievables.search.init('.js-achievables-filter', '.js-achievables-table');
+            global.types.search.init('.js-achievables-types-filter', '.js-achievables-types-table');
+            global.types.renderTable();
         });
 
     </script>

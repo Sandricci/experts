@@ -1,14 +1,14 @@
 ﻿
 @{
-    ViewBag.Title = "Create Type TODO";
+    ViewBag.Title = "Create Type";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="row c-box--medium">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">Home</li>
-            <li class="breadcrumb-item">Achievables</li>
+            <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="breadcrumb-item">@Html.ActionLink("Types", "Index", "Achievables")</li>
             <li class="breadcrumb-item active" aria-current="page">Create</li>
         </ol>
     </nav>
@@ -18,7 +18,34 @@
     <h2>@ViewBag.Title</h2>
 </div>
 
-<div class="row c-box--medium">
-    @Html.ActionLink("My Achievable is not defined", "Create", "Achievable", null, new { @class = "btn btn-sm btn-primary" })
-</div>
+<form class="form">
+    <div class="form-group row">
+        <label for="typeName" class="col-md-2 col-form-label u-no-gutter">Type</label>
+        <div class="col-md-3">
+            <input class="form-control input-sm" id="typeName" placeholder="Name" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="typeCategory" class="col-md-2 col-form-label u-no-gutter">Category</label>
+        <div class="col-md-3">
+            <select class="form-control input-sm" name="typeCategory" style="width: 100%">
+                <option value="1">Hard Skill</option>
+                <option value="2">Soft Skill</option>
+                <option value="3">Experience Skill</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="typeDescription" class="col-md-2 col-form-label u-no-gutter">Description</label>
+        <div class="col-md-3">
+            <textarea class="form-control input-sm" name="typeDescriptionText" style="width: 100%" cols="40" rows="4"></textarea>
+        </div>
+    </div>
+</form>
 
+<div class="col-md-5 c-box--medium">
+    <div class="btn-group pull-right">
+        @Html.ActionLink("Back", "Index", "Achievables", null, new { @class = "btn btn-sm btn-default" })
+        @Html.ActionLink("Create Type", "Index", "Achievables", null, new { @class = "btn btn-sm btn-primary" })
+    </div>
+</div>

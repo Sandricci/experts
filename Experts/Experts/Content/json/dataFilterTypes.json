@@ -1,0 +1,29 @@
+﻿{
+  "results": [
+    {
+      "text": "Hard Skills",
+      "children": [
+        {
+          "id": 1,
+          "text": "Programming Languages"
+        },
+        {
+          "id": 2,
+          "text": "Database Experience"
+        }
+      ]
+    },
+    {
+      "text": "Soft Skills",
+      "children": [
+        {
+          "id": 3,
+          "text": "Team Leader Training"
+        }
+      ]
+    }
+  ],
+  "paginate": {
+    "more": true
+  }
+}

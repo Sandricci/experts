@@ -166,10 +166,11 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\json\data.json" />
-    <Content Include="Content\json\dataDB.json" />
     <Content Include="Content\json\dataAchievements.json" />
     <Content Include="Content\json\dataATR.json" />
     <Content Include="Content\json\dataAchievables.json" />
+    <Content Include="Content\json\dataFilterAchievables.json" />
+    <Content Include="Content\json\dataFilterTypes.json" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
