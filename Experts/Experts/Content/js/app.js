@@ -5,17 +5,14 @@ global.search = {
     init(context, container) {
         global.search.context = context || '';
         global.search.container = container;
-        const json = $.getJSON('/Content/json/data' + global.search.context + '.json', function (json) {
-            $('.js-search').select2({
-                data: json.results,
-                placeholder: 'Filter by achievement',
-                allowClear: true
-            });
-
-        });
-
-        $('.js-search').change(function () {
-            global.search.updateTable();
+        $.getJSON('/Content/json/data' + global.search.context + '.json', function (json) {
+            $('.js-search')
+                .select2({
+                    data: json.results,
+                    placeholder: 'Filter by achievement',
+                    allowClear: true
+                })
+                .change(global.search.updateTable)
         });
     },
     updateTable() {
@@ -71,8 +68,6 @@ global.achievements = {
                 });
             })
         },
-        save() { },
-        reset() { },
         setLastContact() {
             const date = new Date();
             const month = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
@@ -80,7 +75,7 @@ global.achievements = {
         }
     },
     renderATable() {
-        const a = $.getJSON('/Content/json/dataAchievements.json', function (json) {
+        $.getJSON('/Content/json/dataAchievements.json', function (json) {
             console.log('table')
             $('.js-achievement-table').DataTable({
                 data: json,
@@ -95,8 +90,17 @@ global.achievements = {
             });
         });
     },
+    generateStatus(row, data, index) {
+        const status = data["status"];
+        if (status < 33)
+            $('td', row).eq(0).html('<div class="atr-status atr-status-danger">' + status + ' %</div>');
+        else if (status > 32 && status < 80)
+            $('td', row).eq(0).html('<div class="atr-status atr-status-warning">' + status + ' %</div>');
+        else if (status > 80)
+            $('td', row).eq(0).html('<div class="atr-status atr-status-success">' + status + ' %</div>');
+    },
     renderAtrTables() {
-        const atrSoft = $.getJSON('/Content/json/dataATR.json', function (json) {
+        $.getJSON('/Content/json/dataATR.json', function (json) {
             $('.js-achievement-role-table1').DataTable({
                 data: json,
                 columns: [
@@ -107,19 +111,11 @@ global.achievements = {
                     { data: 'amountOwned', className: 'text-center' },
                     { data: 'actions', className: 'text-center', orderable: false }
                 ],
-                createdRow: function (row, data, index) {
-                    const status = data["status"];
-                    if (status < 33)
-                        $('td', row).eq(0).html('<div class="atr-status atr-status-danger">'+ status +' %</div>');
-                    else if (status > 32 && status < 80)
-                        $('td', row).eq(0).html('<div class="atr-status atr-status-warning">' + status +' %</div>');
-                    else if (status > 80)
-                        $('td', row).eq(0).html('<div class="atr-status atr-status-success">' + status +' %</div>');
-                },
+                createdRow: global.achievements.generateStatus,
                 dom: '<"top"f>rt<"bottom"ilp><"clear">'
             });
         });
-        const atrHard = $.getJSON('/Content/json/dataATR.json', function (json) {
+        $.getJSON('/Content/json/dataATR.json', function (json) {
             $('.js-achievement-role-table2').DataTable({
                 data: json,
                 columns: [
@@ -130,19 +126,11 @@ global.achievements = {
                     { data: 'amountOwned', className: 'text-center' },
                     { data: 'actions', className: 'text-center', orderable: false }
                 ],
-                createdRow: function (row, data, index) {
-                    const status = data["status"];
-                    if (status < 33)
-                        $('td', row).eq(0).html('<div class="atr-status atr-status-danger">' + status + ' %</div>');
-                    else if (status > 32 && status < 80)
-                        $('td', row).eq(0).html('<div class="atr-status atr-status-warning">' + status + ' %</div>');
-                    else if (status > 80)
-                        $('td', row).eq(0).html('<div class="atr-status atr-status-success">' + status + ' %</div>');
-                },
+                createdRow: global.achievements.generateStatus,
                 dom: '<"top"f>rt<"bottom"ilp><"clear">'
             });
         });
-        const atrExperience = $.getJSON('/Content/json/dataATR.json', function (json) {
+        $.getJSON('/Content/json/dataATR.json', function (json) {
             $('.js-achievement-role-table3').DataTable({
                 data: json,
                 columns: [
@@ -153,15 +141,7 @@ global.achievements = {
                     { data: 'amountOwned', className: 'text-center' },
                     { data: 'actions', className: 'text-center', orderable: false }
                 ],
-                createdRow: function (row, data, index) {
-                    const status = data["status"];
-                    if (status < 33)
-                        $('td', row).eq(0).html('<div class="atr-status atr-status-danger">' + status + ' %</div>');
-                    else if (status > 32 && status < 80)
-                        $('td', row).eq(0).html('<div class="atr-status atr-status-warning">' + status + ' %</div>');
-                    else if (status > 80)
-                        $('td', row).eq(0).html('<div class="atr-status atr-status-success">' + status + ' %</div>');
-                },
+                createdRow: global.achievements.generateStatus,
                 dom: '<"top"f>rt<"bottom"ilp><"clear">'
             });
         });
@@ -177,11 +157,10 @@ global.achievables = {
                         placeholder: 'Select an achievement',
                         allowClear: true
                     })
-                    .on('change', function (e) {
-                        console.log(e);
+                    .change(function () {
                         $('#js-achievable-description').fadeIn(200);
-                    })
-            })
+                    });
+            });
         },
         setLastContact() {
             const date = new Date();
@@ -194,15 +173,15 @@ global.achievables = {
         init(filter, container) {
             this.container = container;
             $.getJSON('/Content/json/dataFilterAchievables.json', function (db) {
-                $(filter).select2({
-                    data: db.results,
-                    placeholder: 'Filter achievables',
-                    allowClear: true
-                });
-            });
-
-            $(filter).change(function () {
-                global.achievables.search.updateTable(filter);
+                $(filter)
+                    .select2({
+                        data: db.results,
+                        placeholder: 'Filter achievables',
+                        allowClear: true
+                    })
+                    .change(function () {
+                        global.achievables.search.updateTable(filter);
+                    });
             });
         },
         updateTable(filter) {
@@ -247,23 +226,24 @@ global.types = {
         init(filter, container) {
             this.container = container;
             $.getJSON('/Content/json/dataFilterTypes.json', function (db) {
-                $(filter).select2({
-                    data: db.results,
-                    placeholder: 'Filter types',
-                    allowClear: true
-                });
+                $(filter)
+                    .select2({
+                        data: db.results,
+                        placeholder: 'Filter types',
+                        allowClear: true
+                    });
             });
 
             $(filter).change(function () {
-                global.achievables.types.search.updateTable(filter);
+                global.types.search.updateTable(filter);
             });
         },
         updateTable(filter) {
             const selected = $(filter).select2('data');
-            $(global.achievables.types.search.container).DataTable().destroy();
-            $(global.achievables.types.search.container).DataTable({ "dom": '<"top"i>rt<"bottom"flp><"clear">' })
+            $(global.types.search.container).DataTable().destroy();
+            $(global.types.search.container).DataTable({ "dom": '<"top"i>rt<"bottom"flp><"clear">' })
                 .search(selected[0].text);
-            $(global.achievables.types.search.container).DataTable()
+            $(global.types.search.container).DataTable()
                 .draw();
         }
     },
@@ -285,7 +265,7 @@ global.types = {
 global.roles = {
     developer: {
         renderTable(table) {
-            const dev = $.getJSON('/Content/json/dataRoles.json', function (json) {
+            $.getJSON('/Content/json/dataRoles.json', function (json) {
                 $(table).DataTable({
                     data: json.developer,
                     columns: [
@@ -301,7 +281,7 @@ global.roles = {
     },
     other: {
         renderTable(table) {
-            const dev = $.getJSON('/Content/json/dataRoles.json', function (json) {
+            $.getJSON('/Content/json/dataRoles.json', function (json) {
                 $(table).DataTable({
                     data: json.other,
                     columns: [
