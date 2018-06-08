@@ -88,8 +88,8 @@ global.achievements = {
                     { data: 'achievement' },
                     { data: 'type' },
                     { data: 'comment' },
-                    { data: 'lastContact' },
-                    { data: 'actions', className: 'text-center' }
+                    { data: 'lastContact', className: 'text-right' },
+                    { data: 'actions', className: 'text-center', orderable: false }
                 ],
                 "dom": '<"top"f>rt<"bottom"ilp><"clear">'
             });
@@ -100,12 +100,12 @@ global.achievements = {
             $('.js-achievement-role-table1').DataTable({
                 data: json,
                 columns: [
-                    { data: 'status' },
+                    { data: 'status', orderable: false },
                     { data: 'achievement' },
                     { data: 'type' },
-                    { data: 'amountExpected' },
-                    { data: 'amountOwned' },
-                    { data: 'actions', className: 'text-center' }
+                    { data: 'amountExpected', className: 'text-center' },
+                    { data: 'amountOwned', className: 'text-center' },
+                    { data: 'actions', className: 'text-center', orderable: false }
                 ],
                 createdRow: function (row, data, index) {
                     const status = data["status"];
@@ -123,12 +123,12 @@ global.achievements = {
             $('.js-achievement-role-table2').DataTable({
                 data: json,
                 columns: [
-                    { data: 'status' },
+                    { data: 'status', orderable: false },
                     { data: 'achievement' },
                     { data: 'type' },
-                    { data: 'amountExpected' },
-                    { data: 'amountOwned' },
-                    { data: 'actions', className: 'text-center' }
+                    { data: 'amountExpected', className: 'text-center' },
+                    { data: 'amountOwned', className: 'text-center' },
+                    { data: 'actions', className: 'text-center', orderable: false }
                 ],
                 createdRow: function (row, data, index) {
                     const status = data["status"];
@@ -146,12 +146,12 @@ global.achievements = {
             $('.js-achievement-role-table3').DataTable({
                 data: json,
                 columns: [
-                    { data: 'status' },
+                    { data: 'status', orderable: false },
                     { data: 'achievement' },
                     { data: 'type' },
-                    { data: 'amountExpected' },
-                    { data: 'amountOwned' },
-                    { data: 'actions', className: 'text-center' }
+                    { data: 'amountExpected', className: 'text-center' },
+                    { data: 'amountOwned', className: 'text-center' },
+                    { data: 'actions', className: 'text-center', orderable: false }
                 ],
                 createdRow: function (row, data, index) {
                     const status = data["status"];
@@ -195,7 +195,7 @@ global.achievables = {
                     { data: 'type' },
                     { data: 'achievement' },
                     { data: 'comment' },
-                    { data: 'actions', className: 'text-center' }
+                    { data: 'actions', className: 'text-center', orderable: false }
                 ],
                 "dom": '<"top"f>rt<"bottom"ilp><"clear">'
             });
@@ -208,7 +208,7 @@ global.achievables = {
                     { data: 'category' },
                     { data: 'type' },
                     { data: 'comment' },
-                    { data: 'actions', className: 'text-center' }
+                    { data: 'actions', className: 'text-center', orderable: false }
                 ],
                 "dom": '<"top"f>rt<"bottom"ilp><"clear">'
             });
