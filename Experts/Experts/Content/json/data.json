@@ -5,11 +5,13 @@
       "children": [
         {
           "id": 1,
-          "text": "C#"
+          "text": "C#",
+          "desc": "Experience (+2Y), a great C# developer is capable of handling many aspects of developing an application, including but not limited to performance, scalability, security, testing, and more. C# developers can develop modern applications that run on desktop computers, or even sophisticated back-end processes powering modern web applications."
         },
         {
           "id": 2,
-          "text": "F#"
+          "text": "F#",
+          "desc": "Experience (+2Y), this achievable describes the capabilities of developing outstanding F# solutions."
         }
       ]
     },
@@ -18,15 +20,18 @@
       "children": [
         {
           "id": 3,
-          "text": "CouchDB"
+          "text": "CouchDB",
+          "desc": "Experience (+2Y) with CouchDB's offline functionality and query language"
         },
         {
           "id": 4,
-          "text": "MSSQL"
+          "text": "MSSQL",
+          "desc": "Experience (+2Y) and \"SELECT * FROM table\" is NOT the only SQL command you know by heart."
         },
         {
           "id": 5,
-          "text": "Oracle"
+          "text": "Oracle",
+          "desc": "Experience (+2Y), administrate and maintain Oracle database systems or develop Oracle backed data intensive applications."
         }
       ]
     }

@@ -61,12 +61,48 @@ global.achievements = {
     add: {
         init() {
             $.getJSON('/Content/json/data.json', function (db) {
-                $('.add-achievement-select').select2({
-                    data: db.results,
-                    placeholder: 'Select an achievement',
-                    allowClear: true
-                });
+                $('.add-achievement-select')
+                    .select2({
+                        data: db.results,
+                        placeholder: 'Select an achievement',
+                        allowClear: true,
+                        matcher: global.achievements.add.matchCustom
+                    })
+                    .on('select2:select', global.achievements.add.onAchievableSelected)
             })
+        },
+        onAchievableSelected(e) {
+            console.log(e)
+            $('.js-achievable-description').fadeOut(function () {
+                $('.js-achievable-not-found').fadeOut()
+                document.getElementById('js-achievable-desc-title').innerHTML = e.params.data.text;
+                document.getElementById('js-achievable-desc-text').innerHTML = e.params.data.desc;
+                $('.js-achievable-description').fadeIn()
+            })
+        },
+        onAchievableNotFound(e) {
+            $('.js-achievable-description').fadeOut(function () {
+                $('.js-achievable-not-found').fadeIn()
+            })
+        },
+        matchCustom(params, data) {
+            if ($.trim(params.term) === '') {
+                $('.js-achievable-not-found').fadeOut()
+                return data;
+            }
+
+            if (typeof data.text === 'undefined') {
+                return null;
+            }
+
+            if (data.text.indexOf(params.term) > -1) {
+                var modifiedData = $.extend({}, data, true);
+                modifiedData.text += ' (matched)';
+                return modifiedData;
+            }
+
+            global.achievements.add.onAchievableNotFound();
+            return null;
         },
         setLastContact() {
             const date = new Date();
@@ -76,7 +112,6 @@ global.achievements = {
     },
     renderATable() {
         $.getJSON('/Content/json/dataAchievements.json', function (json) {
-            console.log('table')
             $('.js-achievement-table').DataTable({
                 data: json,
                 columns: [
@@ -101,37 +136,7 @@ global.achievements = {
     },
     renderAtrTables() {
         $.getJSON('/Content/json/dataATR.json', function (json) {
-            $('.js-achievement-role-table1').DataTable({
-                data: json,
-                columns: [
-                    { data: 'status', orderable: false },
-                    { data: 'achievement' },
-                    { data: 'type' },
-                    { data: 'amountExpected', className: 'text-center' },
-                    { data: 'amountOwned', className: 'text-center' },
-                    { data: 'actions', className: 'text-center', orderable: false }
-                ],
-                createdRow: global.achievements.generateStatus,
-                dom: '<"top"f>rt<"bottom"ilp><"clear">'
-            });
-        });
-        $.getJSON('/Content/json/dataATR.json', function (json) {
-            $('.js-achievement-role-table2').DataTable({
-                data: json,
-                columns: [
-                    { data: 'status', orderable: false },
-                    { data: 'achievement' },
-                    { data: 'type' },
-                    { data: 'amountExpected', className: 'text-center' },
-                    { data: 'amountOwned', className: 'text-center' },
-                    { data: 'actions', className: 'text-center', orderable: false }
-                ],
-                createdRow: global.achievements.generateStatus,
-                dom: '<"top"f>rt<"bottom"ilp><"clear">'
-            });
-        });
-        $.getJSON('/Content/json/dataATR.json', function (json) {
-            $('.js-achievement-role-table3').DataTable({
+            $('.js-achievement-role-table').DataTable({
                 data: json,
                 columns: [
                     { data: 'status', orderable: false },
@@ -151,15 +156,12 @@ global.achievables = {
     add: {
         init() {
             $.getJSON('/Content/json/data.json', function (db) {
-                $('.add-achievement-select')
+                $('#achievableSelect')
                     .select2({
                         data: db.results,
-                        placeholder: 'Select an achievement',
+                        placeholder: 'Select an achievable',
                         allowClear: true
                     })
-                    .change(function () {
-                        $('#js-achievable-description').fadeIn(200);
-                    });
             });
         },
         setLastContact() {

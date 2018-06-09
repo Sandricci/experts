@@ -20,30 +20,27 @@
 
 <div class="c-box--medium">
     <div class="row">
-        <div class="col-md-6">
-            <form>
+        <div class="col-sm-7 col-md-5 col-lg-4">
+            <form class="form" autocomplete="off">
                 <div class="form-group row">
                     <label for="achievementSelect" class="col-md-2 col-form-label u-no-gutter">Achievable</label>
-                    <div class="col-md-6">
-                        <select class="add-achievement-select input-sm" style="width: 100%" name="state">
+                    <div class="col-md-9">
+                        <select class="add-achievement-select" id="achievementSelect" name="achievementSelect" style="width: 100%" autocomplete="off">
                             <option></option>
                         </select>
                     </div>
-                    <div class="col-md-3">
-                        @Html.ActionLink("My Achievement is not defined", "Create", "Achievables", null, new { @class = "btn btn-sm btn-primary" })
+                </div>
+                <div class="form-group row">
+                    <label for="commentText" class="col-md-2 col-form-label u-no-gutter">Comment</label>
+                    <div class="col-md-9">
+                        <textarea class="form-control input-sm" id="commentText" name="commentText" rows="3" placeholder="enter some remarks here"></textarea>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="commentSelect" class="col-md-2 col-form-label u-no-gutter">Comment</label>
-                    <div class="col-md-6">
-                        <textarea class="form-control input-sm" id="commentSelect" rows="3" placeholder="enter some remarks here"></textarea>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="lcontactSelect" class="col-md-2 col-form-label u-no-gutter">Last Contact</label>
-                    <div class="col-md-6">
+                    <label for="lcontactText" class="col-md-2 col-form-label u-no-gutter">Last Contact</label>
+                    <div class="col-md-9">
                         <div class="input-group">
-                            <input class="form-control input-sm" id="lcontactSelect" placeholder="2018.1" />
+                            <input class="form-control input-sm" id="lcontactText" name="lcontextText" placeholder="2018.1" />
                             <span class="input-group-btn">
                                 <button class="btn btn-default btn-sm" type="button" onclick="global.achievements.add.setLastContact()">Today</button>
                             </span>
@@ -51,24 +48,29 @@
                     </div>
                 </div>
             </form>
-            <div class="col-md-6 c-box--medium">
+            <div class="c-box--medium">
                 <div class="btn-group pull-right">
                     @Html.ActionLink("Back", "Index", "Achievement", null, new { @class = "btn btn-sm btn-default" })
                     @Html.ActionLink("Add Achievement", "Index", "Achievement", new { @class = "btn btn-sm btn-primary" })
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div id="js-achievable-description">
+        <div class="col-sm-5 col-md-5 col-lg-3">
+            <div class="js-achievable-not-found" style="display:none">
+                <div class="col-md-3">
+                    @Html.ActionLink("My Achievement is not defined", "Create", "Achievables", null, new { @class = "btn btn-sm btn-primary" })
+                </div>
+            </div>
+            <div class="js-achievable-description" style="display:none">
                 <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <th>Achievement Name here</th>
+                            <th id="js-achievable-desc-title">?</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
+                            <td id="js-achievable-desc-text">
                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
                                 sed diam nonumy eirmod tempor invidunt ut labore et dolore 
                                 magna aliquyam erat, sed diam voluptua. 
