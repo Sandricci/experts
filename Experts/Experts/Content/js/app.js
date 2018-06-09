@@ -52,7 +52,7 @@ global.home = {
                         text: title
                     }
                 },
-                dom: '<"top"f>rt<"bottom"ilp><"clear">'
+                dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-3'l><'col-sm-5'i><'col-sm-4'p>>"
             })
         }
     }
@@ -72,7 +72,6 @@ global.achievements = {
             })
         },
         onAchievableSelected(e) {
-            console.log(e)
             $('.js-achievable-description').fadeOut(function () {
                 $('.js-achievable-not-found').fadeOut()
                 document.getElementById('js-achievable-desc-title').innerHTML = e.params.data.text;
@@ -121,7 +120,7 @@ global.achievements = {
                     { data: 'lastContact', className: 'text-right' },
                     { data: 'actions', className: 'text-center', orderable: false }
                 ],
-                "dom": '<"top"f>rt<"bottom"ilp><"clear">'
+                dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-3'l><'col-sm-5'i><'col-sm-4'p>>"
             });
         });
     },
@@ -147,27 +146,21 @@ global.achievements = {
                     { data: 'actions', className: 'text-center', orderable: false }
                 ],
                 createdRow: global.achievements.generateStatus,
-                dom: '<"top"f>rt<"bottom"ilp><"clear">'
+                dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-3'l><'col-sm-5'i><'col-sm-4'p>>"
             });
         });
     }
 }
 global.achievables = {
-    add: {
-        init() {
-            $.getJSON('/Content/json/data.json', function (db) {
-                $('#achievableSelect')
-                    .select2({
-                        data: db.results,
-                        placeholder: 'Select an achievable',
-                        allowClear: true
-                    })
+    create: {
+        init(select) {
+            $.getJSON('/Content/json/dataFilterTypes.json', function (db) {
+                $(select).select2({
+                    data: db.results,
+                    placeholder: 'Filter types',
+                    allowClear: true
+                });
             });
-        },
-        setLastContact() {
-            const date = new Date();
-            const month = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
-            document.getElementById('lcontactSelect').value = date.getFullYear().toString().concat('.').concat(month);
         }
     },
     search: {
@@ -206,20 +199,9 @@ global.achievables = {
                     { data: 'comment' },
                     { data: 'actions', className: 'text-center', orderable: false }
                 ],
-                "dom": '<"top"f>rt<"bottom"ilp><"clear">'
+                dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-3'l><'col-sm-5'i><'col-sm-4'p>>"
             });
         });
-    },
-    create: {
-        init(select) {
-            $.getJSON('/Content/json/dataFilterTypes.json', function (db) {
-                $(select).select2({
-                    data: db.results,
-                    placeholder: 'Filter types',
-                    allowClear: true
-                });
-            });
-        }
     }
 },
 global.types = {
@@ -259,7 +241,7 @@ global.types = {
                     { data: 'comment' },
                     { data: 'actions', className: 'text-center', orderable: false }
                 ],
-                "dom": '<"top"f>rt<"bottom"ilp><"clear">'
+                dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-3'l><'col-sm-5'i><'col-sm-4'p>>"
             });
         });
     }
