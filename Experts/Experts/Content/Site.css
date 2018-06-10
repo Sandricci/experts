@@ -43,6 +43,10 @@ textarea {
     padding-right: 0;
 }
 
+.u-gutter--bottom-small {
+    margin-bottom: 10px;
+}
+
 .c-achievements-role .dataTables_wrapper {
     margin-bottom: 30px;
 }

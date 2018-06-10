@@ -73,20 +73,16 @@ global.achievements = {
         },
         onAchievableSelected(e) {
             $('.js-achievable-description').fadeOut(function () {
-                $('.js-achievable-not-found').fadeOut()
                 document.getElementById('js-achievable-desc-title').innerHTML = e.params.data.text;
                 document.getElementById('js-achievable-desc-text').innerHTML = e.params.data.desc;
                 $('.js-achievable-description').fadeIn()
             })
         },
         onAchievableNotFound(e) {
-            $('.js-achievable-description').fadeOut(function () {
-                $('.js-achievable-not-found').fadeIn()
-            })
+            
         },
         matchCustom(params, data) {
             if ($.trim(params.term) === '') {
-                $('.js-achievable-not-found').fadeOut()
                 return data;
             }
 
@@ -236,8 +232,8 @@ global.types = {
             $('.js-achievables-types-table').DataTable({
                 data: json,
                 columns: [
-                    { data: 'category' },
                     { data: 'type' },
+                    { data: 'category' },
                     { data: 'comment' },
                     { data: 'actions', className: 'text-center', orderable: false }
                 ],

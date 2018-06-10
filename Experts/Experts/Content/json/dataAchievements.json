@@ -22,5 +22,13 @@
     "comment": "offline synchronization",
     "lastContact": "2009.01",
     "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "category": "Certificate",
+    "achievement": "Scrum Master",
+    "type": "Agile",
+    "comment": "",
+    "lastContact": "2013.01",
+    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
   }
 ]

@@ -16,6 +16,36 @@
       ]
     },
     {
+      "text": "Academic Degree",
+      "children": [
+        {
+          "id": 1,
+          "text": "Msc",
+          "desc": "Master of Science"
+        },
+        {
+          "id": 2,
+          "text": "Bsc",
+          "desc": "Bachelor of Science"
+        }
+      ]
+    },
+    {
+      "text": "Agile",
+      "children": [
+        {
+          "id": 1,
+          "text": "Scrum Master",
+          "desc": "Scrum Master"
+        },
+        {
+          "id": 2,
+          "text": "Product Owner",
+          "desc": "Product Owner"
+        }
+      ]
+    },
+    {
       "text": "Database Experience",
       "children": [
         {

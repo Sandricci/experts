@@ -6,7 +6,7 @@
     "comment": "",
     "lastContact": "2018.05",
     "amountExpected": "5",
-    "amountOwned": "0",
+    "amountOwned": "4",
     "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\"> + </button><button class=\"btn btn-sm btn-secondary\"> - </button></div>"
   },
   {
@@ -16,7 +16,7 @@
     "comment": "markdown parser",
     "lastContact": "2017.01",
     "amountExpected": "5",
-    "amountOwned": "0",
+    "amountOwned": "1",
     "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\"> + </button><button class=\"btn btn-sm btn-secondary\"> - </button></div>"
   },
   {
@@ -25,7 +25,7 @@
     "type": "Database Experience",
     "comment": "offline synchronization",
     "amountExpected": "5",
-    "amountOwned": "0",
+    "amountOwned": "3",
     "lastContact": "2009.01",
     "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\"> + </button><button class=\"btn btn-sm btn-secondary\"> - </button></div>"
   }

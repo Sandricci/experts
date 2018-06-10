@@ -11,30 +11,38 @@
     </nav>
 </div>
 
-<h1>@ViewBag.Title</h1>
+<div class="row">
+    <h1>@ViewBag.Title</h1>
+</div>
 
-<h4 class="">Developer</h4>
-<table class="js-roles-developer-table table table-striped table-hover table-responsive compact" style="width: 100%">
-    <thead>
-        <tr>
-            <th>Role</th>
-            <th>Assigned Achievables</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-</table>
-
-<h4 class="">Other</h4>
-<table class="js-roles-other-table table table-striped table-hover table-responsive compact" style="width: 100%">
-    <thead>
-        <tr>
-            <th>Role</th>
-            <th>Assigned Achievables</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-</table>
-
+<div class="row">
+    <h4 class="">Developer</h4>
+</div>
+<div class="row">
+    <table class="js-roles-developer-table table table-striped table-hover table-responsive compact" style="width: 100%">
+        <thead>
+            <tr>
+                <th>Role</th>
+                <th>Assigned Achievables</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div class="row">
+    <h4 class="">Other</h4>
+</div>
+<div class="row">
+    <table class="js-roles-other-table table table-striped table-hover table-responsive compact" style="width: 100%">
+        <thead>
+            <tr>
+                <th>Role</th>
+                <th>Assigned Achievables</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    </table>
+</div>
 @section scripts {
     <script>
         $(document).ready(function () {
