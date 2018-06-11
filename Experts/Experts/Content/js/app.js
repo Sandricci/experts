@@ -64,8 +64,7 @@ global.achievements = {
                     .select2({
                         data: db.results,
                         placeholder: 'Select an achievement',
-                        allowClear: true,
-                        matcher: global.achievements.add.matchCustom
+                        allowClear: true
                     })
                     .on('select2:select', global.achievements.add.onAchievableSelected)
             })
