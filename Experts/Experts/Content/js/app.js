@@ -18,7 +18,7 @@ global.search = {
     updateTable() {
         const selected = $('.js-search').select2('data');
         $(global.search.container).DataTable().destroy();
-        $(global.search.container).DataTable({ "dom": '<"top"i>rt<"bottom"flp><"clear">' })
+        $(global.search.container).DataTable({ dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-3'l><'col-sm-5'i><'col-sm-4'p>>" })
             .search(selected[0].text);
         $(global.search.container).DataTable()
             .draw();
@@ -51,8 +51,7 @@ global.home = {
                         display: true,
                         text: title
                     }
-                },
-                dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-3'l><'col-sm-5'i><'col-sm-4'p>>"
+                }
             })
         }
     }
@@ -102,7 +101,7 @@ global.achievements = {
         setLastContact() {
             const date = new Date();
             const month = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
-            document.getElementById('lcontactSelect').value = date.getFullYear().toString().concat('.').concat(month);
+            document.getElementById('lcontactText').value = date.getFullYear().toString().concat('.').concat(month);
         }
     },
     renderATable() {

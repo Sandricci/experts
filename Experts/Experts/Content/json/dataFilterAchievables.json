@@ -34,12 +34,12 @@
       "text": "Agile",
       "children": [
         {
-          "id": 1,
+          "id": 6,
           "text": "Scrum Master",
           "desc": "Scrum Master"
         },
         {
-          "id": 2,
+          "id": 7,
           "text": "Product Owner",
           "desc": "Product Owner"
         }
@@ -49,12 +49,12 @@
       "text": "Academic Degree",
       "children": [
         {
-          "id": 1,
+          "id": 8,
           "text": "Msc",
           "desc": "Master of Science"
         },
         {
-          "id": 2,
+          "id": 9,
           "text": "Bsc",
           "desc": "Bachelor of Science"
         }
