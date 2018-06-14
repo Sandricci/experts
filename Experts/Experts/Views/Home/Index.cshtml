@@ -1,17 +1,16 @@
 ﻿@{
-    ViewBag.Title = "TechTalk Talents";
+    ViewBag.Title = "Welcome to TechTalk Talents!";
 }
 
-<div class="row">
-    <h2>@ViewBag.Title</h2>
-</div>
-
-<div class="row c-box-large">
+<div class="row c-box--large">
     <div class="col-md-9">
         <div class="row">
-            <h3>Progress towards Role: Dev Senior</h3>
+            <h2>@ViewBag.Title</h2>
         </div>
         <div class="row">
+            <h3>Progress towards Role: Developer Senior</h3>
+        </div>
+        <div class="row c-box--large">
             <div class="col-md-4">
                 <canvas id="softskills" height="400" width="400"></canvas>
             </div>
@@ -26,10 +25,15 @@
     <div class="col-md-3">
         <ul class="list-group">
             <li class="list-group-item">@Html.ActionLink("Add Achievement", "Add", "Achievement")</li>
-            <li class="list-group-item">@Html.ActionLink("My Achievements", "index", "Achievement")</li>
+            <li class="list-group-item">@Html.ActionLink("My Achievements", "Index", "Achievement")</li>
+            <li class="list-group-item">@Html.ActionLink("Create Achievable", "Create", "Achievables")</li>
+            <li class="list-group-item">@Html.ActionLink("Another Link", "Index", "Home")</li>
+            <li class="list-group-item">@Html.ActionLink("Another Link", "Index", "Home")</li>
+            <li class="list-group-item">@Html.ActionLink("Another Link", "Index", "Home")</li>
         </ul>
     </div>
 </div>
+
 @section scripts {
     <script>
         window.onload = global.home.diagrams.render()
