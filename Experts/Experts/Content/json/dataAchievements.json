@@ -24,11 +24,67 @@
     "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
   },
   {
-    "category": "Certificate",
+    "category": "Experience",
+    "achievement": "Practice of processes",
+    "type": "Agile",
+    "comment": "",
+    "lastContact": "2015.07",
+    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "category": "Hard Skills",
     "achievement": "Scrum Master",
     "type": "Agile",
     "comment": "",
     "lastContact": "2013.01",
+    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "category": "Soft Skills",
+    "achievement": "Junior mentoring",
+    "type": "Leadership",
+    "comment": "",
+    "lastContact": "2010.01",
+    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "category": "Hard Skills",
+    "achievement": "Invision",
+    "type": "UX",
+    "comment": "Tool for prototyping",
+    "lastContact": "2017.03",
+    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "category": "Hard Skills",
+    "achievement": "MSc",
+    "type": "Academic Degree",
+    "comment": "",
+    "lastContact": "2017.10",
+    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "category": "Soft Skills",
+    "achievement": "Managing virtual teams",
+    "type": "Leadership",
+    "comment": "",
+    "lastContact": "2013.11",
+    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "category": "Soft Skills",
+    "achievement": "Logical thinking",
+    "type": "Critical Thinking",
+    "comment": "",
+    "lastContact": "2010.01",
+    "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "category": "Soft Skills",
+    "achievement": "Customer presentations",
+    "type": "Communication",
+    "comment": "",
+    "lastContact": "2007.01",
     "actions": "<div class=\"btn-group\"><button class=\"btn btn-sm btn-primary\">Last contact now</button><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
   }
 ]

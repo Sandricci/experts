@@ -16,6 +16,76 @@
       ]
     },
     {
+      "text": "Database Experience",
+      "children": [
+        {
+          "id": 10,
+          "text": "CouchDB",
+          "desc": "Experience (+2Y), a great C# developer is capable of handling many aspects of developing an application, including but not limited to performance, scalability, security, testing, and more. C# developers can develop modern applications that run on desktop computers, or even sophisticated back-end processes powering modern web applications."
+        }
+      ]
+    },
+    {
+      "text": "Agile",
+      "children": [
+        {
+          "id": 10,
+          "text": "Practice of processes",
+          "desc": "Knowledge about ceremonies and processes in agile processes."
+        },
+        {
+          "id": 11,
+          "text": "Scrum Master",
+          "desc": "Knowledge about a scrum masters duties and agile processes."
+        }
+      ]
+    },
+    {
+      "text": "Leadership",
+      "children": [
+        {
+          "id": 12,
+          "text": "Junior Mentoring",
+          "desc": "Experience with onboarding and mentoring juniors in your specific area."
+        },
+        {
+          "id": 14,
+          "text": "Managing virutal teams",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "text": "Critical Thinking",
+      "children": [
+        {
+          "id": 15,
+          "text": "Logical thinking",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "text": "Communication",
+      "children": [
+        {
+          "id": 16,
+          "text": "Customer Presentations",
+          "desc": "Experience in creating presentations especially for our customers."
+        }
+      ]
+    },
+    {
+      "text": "UX",
+      "children": [
+        {
+          "id": 13,
+          "text": "Invision",
+          "desc": "Tool for prototyping."
+        }
+      ]
+    },
+    {
       "text": "Academic Degree",
       "children": [
         {
@@ -27,21 +97,6 @@
           "id": 7,
           "text": "Bsc",
           "desc": "Bachelor of Science"
-        }
-      ]
-    },
-    {
-      "text": "Agile",
-      "children": [
-        {
-          "id": 8,
-          "text": "Scrum Master",
-          "desc": "Scrum Master"
-        },
-        {
-          "id": 9,
-          "text": "Product Owner",
-          "desc": "Product Owner"
         }
       ]
     },

@@ -24,11 +24,27 @@
     "actions": "<div class=\"btn-group\"><a href=\"Achievables/Details\" class=\"btn btn-sm btn-primary\">Details</a><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
   },
   {
-    "category": "Certificate",
+    "category": "Soft Skills",
     "achievement": "Scrum Master",
     "type": "Agile",
     "comment": "",
     "lastContact": "2013.01",
+    "actions": "<div class=\"btn-group\"><a href=\"Achievables/Details\" class=\"btn btn-sm btn-primary\">Details</a><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "category": "Experience",
+    "achievement": "Practice of processes",
+    "type": "Agile",
+    "comment": "",
+    "lastContact": "2015.07",
+    "actions": "<div class=\"btn-group\"><a href=\"Achievables/Details\" class=\"btn btn-sm btn-primary\">Details</a><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "category": "Soft Skills",
+    "achievement": "Junior mentoring",
+    "type": "Coaching",
+    "comment": "",
+    "lastContact": "2010.01",
     "actions": "<div class=\"btn-group\"><a href=\"Achievables/Details\" class=\"btn btn-sm btn-primary\">Details</a><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
   }
 ]
