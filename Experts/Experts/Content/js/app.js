@@ -197,7 +197,10 @@ global.achievables = {
                     { data: 'comment' },
                     { data: 'actions', className: 'text-center', orderable: false }
                 ],
-                dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-3'l><'col-sm-5'i><'col-sm-4'p>>"
+                dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-3'l><'col-sm-5'i><'col-sm-4'p>>",
+                createdRow: function (row, data, index) {
+                    $('td', row).eq(0).html('<a href="achievables/details">' + data["achievement"] + '</a>')
+                }
             });
         });
     }
@@ -230,7 +233,7 @@ global.types = {
         }
     },
     renderTable() {
-        const types = $.getJSON('/Content/json/dataAchievables.json', function (json) {
+        const types = $.getJSON('/Content/json/dataTypes.json', function (json) {
             $('.js-achievables-types-table').DataTable({
                 data: json,
                 columns: [

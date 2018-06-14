@@ -1,0 +1,20 @@
+﻿[
+  {
+    "category": "Hard Skills",
+    "type": "Programming Languages",
+    "comment": "",
+    "actions": "<div class=\"btn-group\"><a href=\"Types/Details\" class=\"btn btn-sm btn-primary\">Details</a><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "category": "Experience",
+    "type": "Database Experience",
+    "comment": "offline synchronization",
+    "actions": "<div class=\"btn-group\"><a href=\"Types/Details\" class=\"btn btn-sm btn-primary\">Details</a><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  },
+  {
+    "category": "Experience",
+    "type": "Agile",
+    "comment": "",
+    "actions": "<div class=\"btn-group\"><a href=\"Types/Details\" class=\"btn btn-sm btn-primary\">Details</a><button class=\"btn btn-sm btn-secondary\">Delete</button></div>"
+  }
+]
