@@ -45,28 +45,35 @@
 <div class="clearfix"></div>
 <div class="row">
     <h4>Colleagues having this Achievement</h4>
-    <table class="table table-striped table-hover compact" style="width: 100%">
+    <table class="table table-striped table-condensed table-hover compact">
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Contact</th>
-            </tr>
-            <tr>
-                <td>
-                    Max Mustermann
-                </td>
-                <td>
-                    max.mustermann@test.at
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Sarah Huber
-                </td>
-                <td>
-                    sarah.huber@test.at
-                </td>
+                <th>Last Contact</th>
             </tr>
         </thead>
+        <tbody>
+            <tr>
+                <td>Max Mustermann</td>
+                <td>max.mustermann@techtalk.at</td>
+                <td>2018.05</td>
+            </tr>
+            <tr>
+                <td>Sarah Huber</td>
+                <td>sarah.huber@techtalk.at</td>
+                <td>2011.01</td>
+            </tr>
+        </tbody>
     </table>
 </div>
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $(".table").DataTable({
+                paging: false,
+                info: false
+            });
+        });
+    </script>
+}
