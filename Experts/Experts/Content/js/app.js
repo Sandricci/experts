@@ -70,10 +70,10 @@ global.achievements = {
             })
         },
         onAchievableSelected(e) {
-            $('.js-achievable-description').fadeOut(function () {
+            $('.js-achievable-description').fadeOut(200,function () {
                 document.getElementById('js-achievable-desc-title').innerHTML = e.params.data.text;
                 document.getElementById('js-achievable-desc-text').innerHTML = e.params.data.desc;
-                $('.js-achievable-description').fadeIn()
+                $('.js-achievable-description').fadeIn(200)
             })
         },
         onAchievableNotFound(e) {
