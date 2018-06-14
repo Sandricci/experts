@@ -114,7 +114,10 @@ global.achievements = {
                     { data: 'lastContact', className: 'text-right' },
                     { data: 'actions', className: 'text-center', orderable: false }
                 ],
-                dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-3'l><'col-sm-5'i><'col-sm-4'p>>"
+                dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-3'l><'col-sm-5'i><'col-sm-4'p>>",
+                createdRow: function (row, data, index) {
+                    $('td', row).eq(0).html('<a href="achievables/details">'+data["achievement"]+'</a>')
+                }
             });
         });
     },
@@ -126,6 +129,7 @@ global.achievements = {
             $('td', row).eq(0).html('<div class="atr-status atr-status-warning">' + status + ' %</div>');
         else if (status > 80)
             $('td', row).eq(0).html('<div class="atr-status atr-status-success">' + status + ' %</div>');
+        $('td', row).eq(1).html('<a href="achievables/details">' + data["achievement"] + '</a>')
     },
     renderAtrTables() {
         $.getJSON('/Content/json/dataATR.json', function (json) {
