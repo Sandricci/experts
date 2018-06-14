@@ -30,9 +30,9 @@ global.home = {
         hardskills: null,
         experience: null,
         render(categories) {
-            softskills = this.generateChart('softskills', 'Soft Skills towards Role', 67)
-            hardkills = this.generateChart('hardskills', 'Hard Skills towards Role', 57)
             experience = this.generateChart('experience', 'Experience towards Role', 45)
+            hardkills = this.generateChart('hardskills', 'Hard Skills towards Role', 57)
+            softskills = this.generateChart('softskills', 'Soft Skills towards Role', 67)
         },
         generateChart(el, title, achieved) {
             return new Chart(el, {
